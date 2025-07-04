@@ -3,6 +3,7 @@ package DataStructures;
 //Check same number in array
 //Check Last occurrence of number in array
 //Check strictly greater number in array
+//Check array is sorted
 import java.util.Scanner;
 class CheckSameNumber{
     Scanner sc=new Scanner(System.in);
