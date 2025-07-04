@@ -67,12 +67,30 @@ class CheckStrictlyGreaterNumbers{
         }
     }
 }
-public class D2_ArrayCheckSameNumber {
+class CheckSortedArray{
+    public void CheckSortedArray(int[] arr){
+        int count=1;
+        for(int i=0; i<arr.length-1; i++){
+            if(arr[i]<=arr[i+1]){
+                count=count+1;
+            }
+        }
+        if(count==arr.length){
+            System.out.println("Array is sorted ");
+        }
+        else{
+            System.out.println("Array is not sorted ");
+
+        }
+    }
+}
+public class D2_ArrayCheckOperations {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         CheckSameNumber checkSameNumber=new CheckSameNumber();
         CheckLastOccurrence checkLastOccurrence=new CheckLastOccurrence();
         CheckStrictlyGreaterNumbers checkStrictlyGreaterNumbers=new CheckStrictlyGreaterNumbers();
+        CheckSortedArray checkSortedArray=new CheckSortedArray();
 
 
         System.out.print("Enter size of array :");
@@ -85,5 +103,6 @@ public class D2_ArrayCheckSameNumber {
         checkSameNumber.CountOfSameNumber(arr);
         checkLastOccurrence.CheckOccurrence(arr);
         checkStrictlyGreaterNumbers.CheckGreaterNumber(arr);
+        checkSortedArray.CheckSortedArray(arr);
     }
 }
