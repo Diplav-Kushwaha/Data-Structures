@@ -1,5 +1,8 @@
 package DataStructures;
 
+//Check same number in array
+//Check Last occurrence of number in array
+//Check strictly greater number in array
 import java.util.Scanner;
 class CheckSameNumber{
     Scanner sc=new Scanner(System.in);
@@ -43,11 +46,33 @@ class CheckLastOccurrence{
         }
     }
 }
+class CheckStrictlyGreaterNumbers{
+    Scanner sc=new Scanner(System.in);
+    public void CheckGreaterNumber(int[] arr){
+        System.out.print("Enter number for compare :");
+        int n=sc.nextInt();
+        int count = 0;
+        boolean check=false;
+        for(int i=0; i<arr.length; i++){
+            if(arr[i]>n){
+                count++;
+                check=true;
+            }
+        }
+        if(check){
+            System.out.println("There are "+count+" values greater than "+n);
+        }
+        else{
+            System.out.println("There is "+count+" values greater than "+n);
+        }
+    }
+}
 public class D2_ArrayCheckSameNumber {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         CheckSameNumber checkSameNumber=new CheckSameNumber();
         CheckLastOccurrence checkLastOccurrence=new CheckLastOccurrence();
+        CheckStrictlyGreaterNumbers checkStrictlyGreaterNumbers=new CheckStrictlyGreaterNumbers();
 
 
         System.out.print("Enter size of array :");
@@ -59,5 +84,6 @@ public class D2_ArrayCheckSameNumber {
         }
         checkSameNumber.CountOfSameNumber(arr);
         checkLastOccurrence.CheckOccurrence(arr);
+        checkStrictlyGreaterNumbers.CheckGreaterNumber(arr);
     }
 }
