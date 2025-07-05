@@ -51,11 +51,34 @@ class ArrayManipulation{
         }
     }
 }
+class SecondMaximumNumber{
+    public void SecondMaximum(int[] arr){
+        int maxNumber=arr[1];
+        int secMaxNumber=-1;
+        for(int i=0; i<arr.length; i++){
+            if(arr[i]>maxNumber){
+                maxNumber=arr[i];
+            }
+        }
+        for(int i=0; i<arr.length; i++){
+            if(arr[i]>secMaxNumber){
+                if(arr[i]==maxNumber){
+                    arr[i]=-1;
+                }else{
+                    secMaxNumber=arr[i];
+                }
+            }
+        }
+        System.out.println(maxNumber);
+        System.out.println(secMaxNumber);
+    }
+}
 public class D3_ArrayProblemSolving {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         TargetSumProblem targetSumProblem=new TargetSumProblem();
         ArrayManipulation arrayManipulation=new ArrayManipulation();
+        SecondMaximumNumber secondMaximumNumber=new SecondMaximumNumber();
 
         System.out.print(">>>Enter size of array :");
         int n=sc.nextInt();
@@ -66,6 +89,6 @@ public class D3_ArrayProblemSolving {
         }
         targetSumProblem.TargetSum(arr);
         arrayManipulation.Manipulation(arr);
-
+        secondMaximumNumber.SecondMaximum(arr);
     }
 }
