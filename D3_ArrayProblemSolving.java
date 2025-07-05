@@ -1,6 +1,8 @@
 package DataStructures;
 
 //1. Target Sum problem: Sum of Pairs, Sum of Triplets
+//2. Array Manipulation : Find unique numbers in array
+//3. Second Max Number: Find Second maximum number in array
 import java.util.Scanner;
 class TargetSumProblem{
     Scanner sc=new Scanner(System.in);
@@ -30,10 +32,30 @@ class TargetSumProblem{
         System.out.println(">>>Triplets in array : "+count2);
     }
 }
+class ArrayManipulation{
+    public void Manipulation(int[] arr){
+        for(int i=0; i<arr.length; i++){
+            int n=arr[i];
+            for(int j=i+1; j<arr.length; j++){
+                if(n==arr[j]){
+                    arr[i]=-1;
+                    arr[j]=-1;
+                }
+            }
+        }
+        System.out.println(">>>Unique numbers :");
+        for(int i=0; i<arr.length; i++){
+            if(arr[i]>=0){
+                System.out.print(arr[i]+" ");
+            }
+        }
+    }
+}
 public class D3_ArrayProblemSolving {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         TargetSumProblem targetSumProblem=new TargetSumProblem();
+        ArrayManipulation arrayManipulation=new ArrayManipulation();
 
         System.out.print(">>>Enter size of array :");
         int n=sc.nextInt();
@@ -43,6 +65,7 @@ public class D3_ArrayProblemSolving {
             arr[i]=sc.nextInt();
         }
         targetSumProblem.TargetSum(arr);
+        arrayManipulation.Manipulation(arr);
 
     }
 }
