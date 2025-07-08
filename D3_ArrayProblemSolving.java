@@ -37,6 +37,7 @@ class TargetSumProblem{
 }
 class ArrayManipulation{
     public void Manipulation(int[] arr){
+        System.out.println("Array Manipulation=============================");
         for(int i=0; i<arr.length; i++){
             int n=arr[i];
             for(int j=i+1; j<arr.length; j++){
@@ -56,6 +57,7 @@ class ArrayManipulation{
 }
 class SecondMaximumNumber{
     public void SecondMaximum(int[] arr){
+        System.out.println("Second Maximum Numbers=============================");
         int maxNumber=arr[1];
         int secMaxNumber=-1;
         for(int i=0; i<arr.length; i++){
